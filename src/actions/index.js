@@ -1,8 +1,9 @@
 /* @flow */
 /*global setTimeout*/
-
+import configureStore from "../store/configure-store";
 export const REQUEST_DATA = "REQUEST_DATA";
 export const RECEIVE_DATA = "RECEIVE_DATA";
+export const GOTO_FIRST = "GOTO_FIRST";
 
 export const requestData = (): Object => {
   return {
@@ -26,3 +27,11 @@ export const fetchData = (): Function => {
     }, 300);
   };
 };
+
+
+
+export function gotoFirst() {
+    const store = configureStore;
+    const action = type => store.dispatch({type});
+    action(GOTO_FIRST);
+}

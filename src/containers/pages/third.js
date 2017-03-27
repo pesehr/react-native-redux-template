@@ -6,7 +6,8 @@ import {
     View,
     Button
 } from 'react-native';
-var {Actions} = require('react-native-redux-router');
+const {Actions} = require('react-native-redux-router');
+import {gotoFirst} from "../../actions"
 
 export default class Third extends Component {
     render() {
@@ -19,6 +20,8 @@ export default class Third extends Component {
                     third page!
                 </Text>
                 <Button title={"Previous page!"} onPress={Actions.second} style={styles.instructions}/>
+                <Button title={"go first page! (with 1 second delay)"} onPress={()=>gotoFirst()}
+                        style={styles.instructions}/>
             </View>
         );
     }

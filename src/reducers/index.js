@@ -25,7 +25,7 @@ const data = (state = {
 
 const rootReducer = combineReducers({
   data,
-  routerReducer
+  routerReducer,
 });
 
 export default rootReducer;
