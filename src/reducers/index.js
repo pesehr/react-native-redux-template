@@ -3,6 +3,7 @@
 import { combineReducers } from "redux";
 import * as types from "../actions";
 
+const {routerReducer} = require('react-native-redux-router');
 const data = (state = {
   isFetching: false,
   message: ""
@@ -23,7 +24,8 @@ const data = (state = {
 };
 
 const rootReducer = combineReducers({
-  data
+  data,
+  routerReducer
 });
 
 export default rootReducer;

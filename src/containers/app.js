@@ -1,47 +1,23 @@
-/* @flow */
-/*eslint-disable prefer-const */
 
-import React from "react-native";
-import { connect } from "react-redux";
-import { fetchData } from "../actions";
-
-let {
-  Text,
-  ScrollView
-} = React;
-
-class App extends React.Component {
-  componentDidMount() {
-    this.props.dispatch(fetchData());
-  }
-  render() {
-    return (
-      <ScrollView
-        style={{flex: 1}}
-        contentContainerStyle={{
-          justifyContent: "center",
-          alignItems: "center"
-        }}
-      >
-        <Text>{this.props.isFetching ? "Loading" : this.props.message}</Text>
-      </ScrollView>
-    );
-  }
+import React, { Component } from 'react';
+import {View,Text} from 'react-native';
+const {Router, Route} = require('react-native-redux-router');
+import Launch from "./pages/first";
+import Second from "./pages/second";
+import Third from "./pages/third";
+export default class App extends Component {
+    render() {
+        return (
+            <View style={{flex:1}}>
+                <Router>
+                    <Route name="first" component={Launch} initial={true} hideNavBar={true} title="Firsst"/>
+                    <Route name="second" component={Second} initial={false} hideNavBar={true} title="Second"/>
+                    <Route name="third" component={Third} initial={false} hideNavBar={true} title="Third"/>
+                </Router>
+            </View>
+        );
+    }
+    map
 }
 
-App.propTypes = {
-  dispatch: React.PropTypes.func,
-  message: React.PropTypes.string,
-  isFetching: React.PropTypes.bool
-};
 
-App.defaultProps = {
-  dispatch: () => {},
-  isFetching: false,
-  message: ""
-};
-
-export default connect((state) => ({
-  isFetching: state.data.isFetching,
-  message: state.data.message
-}))(App);

@@ -1,8 +1,14 @@
-import React from "react-native";
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+
+import React, { Component } from 'react';
+import {
+    AppRegistry,
+} from 'react-native';
+
 import Root from "./src/containers/root";
 
-const {
-  AppRegistry
-} = React;
-
-AppRegistry.registerComponent("App", () => Root);
+AppRegistry.registerComponent('reactNativeReduxTemplate', () => Root);

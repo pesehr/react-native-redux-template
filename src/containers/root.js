@@ -1,20 +1,18 @@
-/* @flow */
-
-import React from "react-native";
+import React from "react";
+import {View} from "react-native";
 import { Provider } from "react-redux";
 import configureStore from "../store/configure-store";
-import Scene from "../components/scene";
+import App from "./app";
 
 const store = configureStore();
 
-class Root extends React.Component {
-  render() {
-    return (
-      <Provider store={store}>
-        {() => <Scene />}
-      </Provider>
-    );
-  }
+export  default  class Root extends React.Component {
+    render() {
+        return (
+            <Provider store={store}>
+                    <App></App>
+            </Provider>
+        );
+    }
 }
 
-export default Root;
