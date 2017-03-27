@@ -9,7 +9,7 @@ const loggerMiddleware = createLogger();
 
 const createStoreWithMiddleware = applyMiddleware(
   thunkMiddleware,
-  loggerMiddleware
+  applyMiddleware(loggerMiddleware)
 )(createStore);
 
 const configureStore = function (initialState: Object = {}): Function {
