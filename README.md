@@ -1,4 +1,4 @@
 # react-native-redux-template
+https://david-dm.org/pesehr/react-native-redux-template.svg
 A redux arch template for creating react-native apps.
 
-# start a reat native project with this template quickly!
